@@ -24,7 +24,7 @@
 
 import Foundation
 
-open class AvatarView: UIImageView {
+open class MKAvatarView: UIImageView {
 
     // MARK: - Properties
     

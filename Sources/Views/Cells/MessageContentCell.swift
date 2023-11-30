@@ -28,7 +28,7 @@ import UIKit
 open class MessageContentCell: MessageCollectionViewCell {
 
     /// The image view displaying the avatar.
-    open var avatarView = AvatarView()
+    open var avatarView = MKAvatarView()
 
     /// The container used for styling and holding the message's content view.
     open var messageContainerView: MessageContainerView = {
@@ -115,7 +115,7 @@ open class MessageContentCell: MessageCollectionViewCell {
         layoutCellBottomLabel(with: attributes)
         layoutCellTopLabel(with: attributes)
         layoutMessageTopLabel(with: attributes)
-        layoutAvatarView(with: attributes)
+        layoutMKAvatarView(with: attributes)
         layoutAccessoryView(with: attributes)
     }
 
@@ -138,7 +138,7 @@ open class MessageContentCell: MessageCollectionViewCell {
         let messageColor = displayDelegate.backgroundColor(for: message, at: indexPath, in: messagesCollectionView)
         let messageStyle = displayDelegate.messageStyle(for: message, at: indexPath, in: messagesCollectionView)
 
-        displayDelegate.configureAvatarView(avatarView, for: message, at: indexPath, in: messagesCollectionView)
+        displayDelegate.configureMKAvatarView(avatarView, for: message, at: indexPath, in: messagesCollectionView)
 
         displayDelegate.configureAccessoryView(accessoryView, for: message, at: indexPath, in: messagesCollectionView)
 
@@ -194,9 +194,9 @@ open class MessageContentCell: MessageCollectionViewCell {
 
     // MARK: - Origin Calculations
 
-    /// Positions the cell's `AvatarView`.
+    /// Positions the cell's `MKAvatarView`.
     /// - attributes: The `MessagesCollectionViewLayoutAttributes` for the cell.
-    open func layoutAvatarView(with attributes: MessagesCollectionViewLayoutAttributes) {
+    open func layoutMKAvatarView(with attributes: MessagesCollectionViewLayoutAttributes) {
         var origin: CGPoint = .zero
         let padding = attributes.avatarLeadingTrailingPadding
 

@@ -25,13 +25,13 @@
 import XCTest
 @testable import MessageKit
 
-class AvatarViewTests: XCTestCase {
+class MKAvatarViewTests: XCTestCase {
 
-    var avatarView: AvatarView!
+    var avatarView: MKAvatarView!
 
     override func setUp() {
         super.setUp()
-        avatarView = AvatarView()
+        avatarView = MKAvatarView()
         avatarView.frame.size = CGSize(width: 30, height: 30)
     }
 

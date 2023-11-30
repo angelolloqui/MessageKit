@@ -24,12 +24,12 @@
 
 import Foundation
 
-/// An object used to group the information to be used by an `AvatarView`.
+/// An object used to group the information to be used by an `MKAvatarView`.
 public struct Avatar {
     
     // MARK: - Properties
     
-    /// The image to be used for an `AvatarView`.
+    /// The image to be used for an `MKAvatarView`.
     public let image: UIImage?
     
     /// The placeholder initials to be used in the case where no image is provided.

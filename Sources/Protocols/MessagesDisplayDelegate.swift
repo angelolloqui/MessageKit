@@ -72,17 +72,17 @@ public protocol MessagesDisplayDelegate: AnyObject {
     ///   - messagesCollectionView: The `MessagesCollectionView` in which this footer will be displayed.
     func messageFooterView(for indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageReusableView
     
-    /// Used to configure the `AvatarView`‘s image in a `MessageContentCell` class.
+    /// Used to configure the `MKAvatarView`‘s image in a `MessageContentCell` class.
     ///
     /// - Parameters:
-    ///   - avatarView: The `AvatarView` of the cell.
+    ///   - avatarView: The `MKAvatarView` of the cell.
     ///   - message: The `MessageType` that will be displayed by this cell.
     ///   - indexPath: The `IndexPath` of the cell.
     ///   - messagesCollectionView: The `MessagesCollectionView` in which this cell will be displayed.
     ///
     /// - Note:
     ///   The default image configured by this method is `?`.
-    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView)
+    func configureMKAvatarView(_ avatarView: MKAvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView)
 
     /// Used to configure the `AccessoryView` in a `MessageContentCell` class.
     ///
@@ -242,7 +242,7 @@ public extension MessagesDisplayDelegate {
         return messagesCollectionView.dequeueReusableFooterView(MessageReusableView.self, for: indexPath)
     }
     
-    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+    func configureMKAvatarView(_ avatarView: MKAvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         avatarView.initials = "?"
     }
 
